@@ -1,8 +1,6 @@
-const headers = new Headers({
-	'Content-Type': 'application/json',
-});
+import { randomPokemonId } from '../utils';
 
-export const getPokemon = async (id: number) => {
-	const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, { method: 'GET', headers }).then((res) => res.json());
+export const getPokemon = async () => {
+	const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId()}`).then((res) => res.json());
 	return res;
 };
